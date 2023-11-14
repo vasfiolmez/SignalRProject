@@ -1,0 +1,13 @@
+﻿namespace SignalRApi.Entitylayer.Entities
+{
+    public class Booking
+    {
+        public int BookingID { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Mail { get; set; }
+        public int PersonCpunt { get; set; }
+        public DateTime Date { get; set; }
+
+    }
+}
