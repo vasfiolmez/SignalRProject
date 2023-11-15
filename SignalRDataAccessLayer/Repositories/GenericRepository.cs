@@ -12,13 +12,13 @@ namespace SignalR.DataAccessLayer.Repositories
     {
         private readonly SignalRContext _context;
 
-        public GenericRepository(SignalRContext context) 
-        { 
-        _context= context;
+        public GenericRepository(SignalRContext context)
+        {
+            _context = context;
         }
         public void Add(T entity)
         {
-           _context.Add(entity);
+            _context.Add(entity);
             _context.SaveChanges();
         }
 
