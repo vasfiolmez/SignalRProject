@@ -61,6 +61,7 @@ namespace SignalRApi.Controllers
                 FeatureID = updateFeatureDto.FeatureID,
                 Description1 = updateFeatureDto.Description1,
                 Description2 = updateFeatureDto.Description2,
+                Description3= updateFeatureDto.Description3,
                 Title1 = updateFeatureDto.Title1,
                 Title2 = updateFeatureDto.Title2,
                 Title3 = updateFeatureDto.Title3

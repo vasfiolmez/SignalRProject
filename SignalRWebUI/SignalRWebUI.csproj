@@ -10,10 +10,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dtos\FeatureDtos\" />
-    <Folder Include="Dtos\TestimonialDtos\" />
-    <Folder Include="Dtos\SocialMediaDtos\" />
-  </ItemGroup>
-
 </Project>
