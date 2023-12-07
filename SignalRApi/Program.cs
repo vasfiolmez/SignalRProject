@@ -3,6 +3,7 @@ using SignalR.BusinessLayer.Concrete;
 using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.Concrete;
 using SignalR.DataAccessLayer.EntityFramework;
+using SignalRApi.Hubs;
 using System.Reflection;
 
 internal class Program
@@ -11,6 +12,18 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        //cors politikasý
+        builder.Services.AddCors(opt=>
+        {
+            opt.AddPolicy("CorsPolicy",builder=>
+            {
+                builder.AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed((host) => true)
+                .AllowCredentials();
+            });
+        });
+        builder.Services.AddSignalR();
         // Add services to the container.
         builder.Services.AddDbContext<SignalRContext>();
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly()); //auto mapper registration i
@@ -59,12 +72,15 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+        app.UseCors("CorsPolicy");//cors politika
 
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
 
         app.MapControllers();
+
+        app.MapHub<SignalRHub>("/signalrhub");//endpoint 
 
         app.Run();
     }
