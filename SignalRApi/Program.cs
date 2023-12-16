@@ -62,6 +62,9 @@ internal class Program
         builder.Services.AddScoped<IOrderDetailService, OrderDetailManager>();
         builder.Services.AddScoped<IOrderDetailDal, EfOrderDetailDal>();
 
+        builder.Services.AddScoped<IMoneyCaseService, MoneyCaseManager>();
+        builder.Services.AddScoped<IMoneyCaseDal, EfMoneyCaseDal>();
+
 
 
 

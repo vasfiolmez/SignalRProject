@@ -9,51 +9,41 @@ using System.Threading.Tasks;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-    public class OrderManager : IOrderService
+    public class MoneyCaseManager : IMoneyCaseService
     {
-        private readonly IOrderDal _orderDal;
+        private readonly IMoneyCaseDal _moneyCaseDal;
 
-        public OrderManager(IOrderDal orderDal)
+        public MoneyCaseManager(IMoneyCaseDal moneyCaseDal)
         {
-            _orderDal = orderDal;
+            _moneyCaseDal = moneyCaseDal;
         }
 
-        public int TActiveOrderCount()
-        {
-            return _orderDal.ActiveOrderCount();
-        }
-
-        public void TAdd(Order entity)
+        public void TAdd(MoneyCase entity)
         {
             throw new NotImplementedException();
         }
 
-        public void TDelete(Order entity)
+        public void TDelete(MoneyCase entity)
         {
             throw new NotImplementedException();
         }
 
-        public Order TGetByID(int id)
+        public MoneyCase TGetByID(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Order> TGetListAll()
+        public List<MoneyCase> TGetListAll()
         {
             throw new NotImplementedException();
         }
 
-        public decimal TLastOrderPrice()
+        public decimal TTotalMoneyCaseAmount()
         {
-            return _orderDal.LastOrderPrice();
+            return _moneyCaseDal.TotalMoneyCaseAmount();
         }
 
-        public int TTotalOrderCount()
-        {
-            return _orderDal.TotalOrderCount();
-        }
-
-        public void TUpdate(Order entity)
+        public void TUpdate(MoneyCase entity)
         {
             throw new NotImplementedException();
         }
