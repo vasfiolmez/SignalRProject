@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SignalRWebUI.Dtos.DiscountDtos;
-using SignalRWebUI.Dtos.SliderDtos;
+using SignalRWebUI.Dtos.TestimonialDtos;
 
 namespace SignalRWebUI.DefaultComponents
 {
-    public class _DefaultOfferComponentPartial:ViewComponent
+    public class _DefaultTestimonialComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _DefaultOfferComponentPartial(IHttpClientFactory httpClientFactory)
+        public _DefaultTestimonialComponentPartial(IHttpClientFactory httpClientFactory)
         {
 
             _httpClientFactory = httpClientFactory;
@@ -20,11 +19,11 @@ namespace SignalRWebUI.DefaultComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7057/api/Discount");
+            var responseMessage = await client.GetAsync("https://localhost:7057/api/Testimonial");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultDiscountDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
                 return View(values);
             }
             return View();
