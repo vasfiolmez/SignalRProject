@@ -134,16 +134,23 @@
 
     <script>
 
-     function showproductid(value)
+     function showproductid(value,name)
         {
-            var id = value;
+         var productName = name;
+            var productID = value;
             $.ajax(
                 {
                 type: 'post',
-                data: {item:id},
+                data: {item:productID},
+                url:"/Menu/AddBasket/"+productID,
                 contentType: 'json',
                 success: function () {
-                   alert('Tıkladığınız ürün id değeri : '+ id)
+                    Swal.fire({
+                        title:productName,
+                        text:"Seçtiğiniz Ürün Sepete Eklendi!"
+                        icon:"success"
+                    })
+                   
                 }
             });
 
@@ -151,6 +158,9 @@
 
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 </body>
 

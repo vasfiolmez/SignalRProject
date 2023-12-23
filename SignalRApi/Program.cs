@@ -5,6 +5,7 @@ using SignalR.DataAccessLayer.Concrete;
 using SignalR.DataAccessLayer.EntityFramework;
 using SignalRApi.Hubs;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 internal class Program
 {
@@ -72,7 +73,11 @@ internal class Program
         builder.Services.AddScoped<ISliderService, SliderManager>();
         builder.Services.AddScoped<ISliderDal, EfSliderDal>();
 
+        builder.Services.AddScoped<IBasketService, BasketManager>();
+        builder.Services.AddScoped<IBasketDal, EfBasketDal>();
 
+        //cycle was detected hata çözümü
+        builder.Services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 
 
