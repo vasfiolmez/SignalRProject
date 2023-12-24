@@ -134,22 +134,18 @@
 
     <script>
 
-     function showproductid(value,name)
+     function showproductid(value)
         {
-         var productName = name;
-            var productID = value;
+         
+            var id = value;
             $.ajax(
                 {
-                type: 'post',
-                data: {item:productID},
-                url:"/Menu/AddBasket/"+productID,
+                type: 'POST',
+                data: {item:id},
+                url:"/Menu/AddBasket/"+id,
                 contentType: 'json',
                 success: function () {
-                    Swal.fire({
-                        title:productName,
-                        text:"Seçtiğiniz Ürün Sepete Eklendi!"
-                        icon:"success"
-                    })
+                   swal("seçilen ürün ıd:"+id, "Seçtiğiniz Ürün Sepete Eklendi!","success")
                    
                 }
             });
@@ -158,7 +154,8 @@
 
 
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 
 
