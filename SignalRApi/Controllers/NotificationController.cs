@@ -29,7 +29,7 @@ namespace SignalRApi.Controllers
         [HttpGet("GetAllNotificationByFalse")]
         public IActionResult GetAllNotificationByFalse() 
         {
-            return Ok(_notificationService.TGetAllNotificationByFalse);
+            return Ok(_notificationService.TGetAllNotificationByFalse());
         }
         [HttpPost]
         public IActionResult CreateNotification(CreateNotificationDto createNotificationDto )
