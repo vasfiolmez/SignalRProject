@@ -25,7 +25,7 @@ namespace SignalRWebUI.DefaultComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<Dtos.ProductDtos.ResultProductDto>>(jsonData);
                 return View(values);
             }
             return View();
