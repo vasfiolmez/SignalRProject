@@ -41,8 +41,6 @@ namespace SignalRWebUI.Controllers
                                             {
                                                 Text = x.Name,
                                                 Value = x.CategoryID.ToString()
-
-
                                             }).ToList();
             ViewBag.v=values2;
             return View();
@@ -103,8 +101,7 @@ namespace SignalRWebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
         {
-           
-
+            updateProductDto.ProductStatus = true;
             var client1 = _httpClientFactory.CreateClient();
             var jsonData1 = JsonConvert.SerializeObject(updateProductDto);
             StringContent stringContent = new StringContent(jsonData1, Encoding.UTF8, "application/json");
