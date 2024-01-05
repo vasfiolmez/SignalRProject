@@ -16,13 +16,12 @@
                     <div class="card-body">
                         <div class="card-sub">
                             İletişim alanı ile  ilgili işlemleri aşağıdan yapabilirsiniz. Tema bütünlüğü için
-                            Sadece 1 tane iletişim alanı oluşturmayı
+                            Sadece<strong> 1 tane iletişim alanı </strong> oluşturmayı
                             unutmayınız.
                         </div>
                         <table class="table mt-3">
                             <thead>
-                                <tr>
-                                    <th scope="col">#</th>
+                                <tr>                         
                                     <th scope="col">Konum</th>
                                     <th scope="col">Telefon</th>
                                     <th scope="col">Mail</th>
@@ -35,8 +34,7 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
-                                        <td>@item.ContactID</td>
+                                    <tr>                                       
                                         <td>@item.Location</td>
                                         <td>@item.Phone</td>
                                         <td>@item.Mail</td>
