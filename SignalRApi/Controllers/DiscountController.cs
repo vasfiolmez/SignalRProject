@@ -30,11 +30,13 @@ namespace SignalRApi.Controllers
         {
             _discountService.TAdd(new Discount()
             {
-                Amount= createDiscountDto.Amount,
-                Description= createDiscountDto.Description,
-                ImageURL= createDiscountDto.ImageURL,
-                Title= createDiscountDto.Title
-            });
+                Amount = createDiscountDto.Amount,
+                Description = createDiscountDto.Description,
+                ImageURL = createDiscountDto.ImageURL,
+                Title = createDiscountDto.Title,
+                Status = false
+
+            }); 
             return Ok("İndirim Bilgisi eklendi");
         }
         [HttpDelete]
@@ -59,10 +61,24 @@ namespace SignalRApi.Controllers
                 DiscountID = updateDiscountDto.DiscountID,
                 Amount = updateDiscountDto.Amount,
                 Description = updateDiscountDto.Description,
-                ImageURL= updateDiscountDto.ImageURL,
-                Title= updateDiscountDto.Title
+                ImageURL = updateDiscountDto.ImageURL,
+                Title = updateDiscountDto.Title,
+                Status = false
+
             });
             return Ok("İndirim Bilgisi Güncellendi");
+        }
+        [HttpGet("ChangeStatusToTrue")]
+        public async Task<IActionResult> ChangeStatusToTrue(int id)
+        {
+            _discountService.TChangeStatusToTrue(id);
+            return Ok("Ürün indirimi Aktif Hale Getirildi.");
+        }
+        [HttpGet("ChangeStatusToFalse")]
+        public async Task<IActionResult> ChangeStatusToFalse(int id)
+        {
+            _discountService.TChangeStatusToFalse(id);
+            return Ok("Ürün indirimi Pasif Hale Getirildi.");
         }
     }
 }
