@@ -1,33 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SignalRWebUI.Dtos.DiscountDtos;
-using SignalRWebUI.Dtos.SliderDtos;
+using SignalRWebUI.Controllers;
+using SignalRWebUI.Dtos.SocialMediaDtos;
+using System.Net.Http;
 
-namespace SignalRWebUI.DefaultComponents
+namespace SignalRWebUI.UILayoutComponents
 {
-    public class _DefaultOfferComponentPartial:ViewComponent
+    public class _UILayoutSocialMediaComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
-        public _DefaultOfferComponentPartial(IHttpClientFactory httpClientFactory)
+        public _UILayoutSocialMediaComponentPartial(IHttpClientFactory httpClientFactory)
         {
-
             _httpClientFactory = httpClientFactory;
-
         }
-
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7057/api/Discount/GetListByStatusTrue");
+            var responseMessage = await client.GetAsync("https://localhost:7057/api/SocialMedia");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultDiscountDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultSocialMediaDto>>(jsonData);
                 return View(values);
             }
             return View();
         }
+
+
     }
 }

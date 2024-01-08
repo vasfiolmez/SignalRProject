@@ -78,6 +78,8 @@ internal class Program
         builder.Services.AddScoped<INotificationService, NotificationManager>();
         builder.Services.AddScoped<INotificationDal, EfNotificationDal>();
 
+        builder.Services.AddScoped<IMessageService, MessageManager>();
+        builder.Services.AddScoped<IMessageDal, EfMessageDal>();
 
 
         //cycle was detected hata çözümü

@@ -5,6 +5,7 @@
     decimal basketTotalPrice = 0;
     decimal basketTotalPriceWithTax = 0;
     decimal Tax = 0;
+    decimal totalPriceWithCount = 0;
 }
 
 <!DOCTYPE html>
@@ -51,22 +52,28 @@
                             <th>Sil</th>
                         </tr>
                     </thead>
-                    @foreach (var item in Model)
+                    @foreach (var group in Model.GroupBy(x=>x.ProductName))
                     {
+                        var item = group.First();//grubun ilk ögesini aldık
+                        var itemCount = group.Count();//gruplanmış productname sayısına ulaşıyoruz
+
+
+
                         basketTotalPrice = Model.Sum(x => x.Price);
                         Tax = basketTotalPrice / 100 * 10;
                         basketTotalPriceWithTax = basketTotalPrice + Tax;
                         count++;
+
+                        totalPriceWithCount = item.Price * itemCount;
+
                         <tbody class="align-middle">
                             <tr>
                                 <td class="align-middle">@count</td>
                                 <td class="align-middle">@item.ProductName</td>
-                                <td class="align-middle">@item.Count</td>
+                                <td class="align-middle">@itemCount</td>
                                 <td class="align-middle">@item.Price</td>
-                                <td class="align-middle">@item.TotalPrice</td>
+                                <td class="align-middle">@totalPriceWithCount</td>
                                 <td class="align-middle btn-delete"><a href="/Baskets/DeleteBasket/@item.BasketID" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
-
-
                             </tr>
                         </tbody>
                     }
@@ -102,7 +109,6 @@
                                 <h5><span id="totalpricewithkdv">@basketTotalPriceWithTax</span>₺</h5>
                             </div>
                             <br />
-
                         </div>
                         <button id="btnchecked" class="btn btn-block btn-warning font-weight-bold my-3">Siparişi Tamamla</button>
                     </div>
@@ -113,21 +119,11 @@
 
         </div>
     </div>
-
-
-
     @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
-
-
     @await Component.InvokeAsync("_UILayoutScriptComponentPartial")
 
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 
 </body>
 
