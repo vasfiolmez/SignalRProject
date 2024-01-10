@@ -20,7 +20,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var values= context.Bookings.Find(id);
-            values.Description = "Rezarvasyon Onaylandı.";
+            values.Description = "Rezervasyon Onaylandı.";
             context.SaveChanges();
         }
 
@@ -28,8 +28,15 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var values = context.Bookings.Find(id);
-            values.Description = "Rezarvasyon İptal Edildi.";
+            values.Description = "Rezervasyon İptal Edildi.";
             context.SaveChanges();
+        }
+
+        public int BookingStatusApprovedCount()
+        {
+            using var context = new SignalRContext();
+            var values = context.Bookings.Where(x => x.Description == "Rezervasyon Onaylandı.").Count();
+            return values;
         }
     }
 }
