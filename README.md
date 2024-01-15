@@ -25,6 +25,27 @@
 9-Api
 ![restoranapi](https://github.com/vasfiolmez/SignalRProject/assets/58458944/748d9342-54ba-4710-b024-e18d2b7181e7)
 
+<strong>Projede Kullanılan Teknolojiler Şu Şekildedir.</strong>
+Asp Net Core 6.0
+Asp Net Core API
+SignalR
+Swagger
+Dto
+N Tier Architecture
+MSSQL
+Html Css Boostrap
+Javascript
+Ajax
+Entiy Framework - Linq
+Sweet Alert
+Sepet İşlemleri
+QR kod işlemleri
+Rezervasyon işlemleri
+Real - Time Uygulamalar
+Real - Time Mesajlaşma
+Real - Time İstatistik
+Real - Time Bildirim
+Mail Gönderme
 
 
 
