@@ -1,4 +1,3 @@
-sunum:https://youtu.be/iWgYJ8L0iq8
 
 <strong>Projede Kullanılan Teknolojiler Şu Şekildedir.</strong>
 
