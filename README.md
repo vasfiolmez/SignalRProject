@@ -1,5 +1,29 @@
 sunum:https://youtu.be/iWgYJ8L0iq8
 
+<strong>Projede Kullanılan Teknolojiler Şu Şekildedir.</strong>
+
+Asp Net Core 6.0
+Asp Net Core API
+SignalR
+Swagger
+Dto
+N Tier Architecture
+MSSQL
+Html Css Boostrap
+Javascript
+Ajax
+Entiy Framework - Linq
+Sweet Alert
+Sepet İşlemleri
+QR kod işlemleri
+Rezervasyon işlemleri
+Real - Time Uygulamalar
+Real - Time Mesajlaşma
+Real - Time İstatistik
+Real - Time Bildirim
+Mail Gönderme
+
+
 1-Web Sayfası UI
 ![webuırestoran](https://github.com/vasfiolmez/SignalRProject/assets/58458944/df0a6ca8-18dd-407e-988a-72f0cb580f10)
 
@@ -26,28 +50,6 @@ sunum:https://youtu.be/iWgYJ8L0iq8
 
 9-Api
 ![restoranapi](https://github.com/vasfiolmez/SignalRProject/assets/58458944/748d9342-54ba-4710-b024-e18d2b7181e7)
-
-<strong>Projede Kullanılan Teknolojiler Şu Şekildedir.</strong>
-Asp Net Core 6.0
-Asp Net Core API
-SignalR
-Swagger
-Dto
-N Tier Architecture
-MSSQL
-Html Css Boostrap
-Javascript
-Ajax
-Entiy Framework - Linq
-Sweet Alert
-Sepet İşlemleri
-QR kod işlemleri
-Rezervasyon işlemleri
-Real - Time Uygulamalar
-Real - Time Mesajlaşma
-Real - Time İstatistik
-Real - Time Bildirim
-Mail Gönderme
 
 
 
