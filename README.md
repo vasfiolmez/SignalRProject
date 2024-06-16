@@ -1,26 +1,26 @@
 
 <strong>Projede Kullanılan Teknolojiler Şu Şekildedir.</strong>
 ---
--Asp Net Core 6.0
--Asp Net Core API
--SignalR
--Swagger
--Dto
--N Tier Architecture
--MSSQL
--Html Css Boostrap
--Javascript
--Ajax
--Entiy Framework - Linq
--Sweet Alert
--Sepet İşlemleri
--QR kod işlemleri
--Rezervasyon işlemleri
--Real - Time Uygulamalar
--Real - Time Mesajlaşma
--Real - Time İstatistik
--Real - Time Bildirim
--Mail Gönderme
+- Asp Net Core 6.0
+- Asp Net Core API
+- SignalR
+- Swagger
+- Dto
+- N Tier Architecture
+- MSSQL
+- Html Css Boostrap
+- Javascript
+- Ajax
+- Entiy Framework - Linq
+- Sweet Alert
+- Sepet İşlemleri
+- QR kod işlemleri
+- Rezervasyon işlemleri
+- Real - Time Uygulamalar
+- Real - Time Mesajlaşma
+- Real - Time İstatistik
+- Real - Time Bildirim
+- Mail Gönderme
 
 
 1-Web Sayfası UI
